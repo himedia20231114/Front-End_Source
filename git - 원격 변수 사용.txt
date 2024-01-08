@@ -1,0 +1,53 @@
+
+-- 원격 레파지토리에 처음 1번 만 실행 
+git clone "https://github.com/himedia20231114/Front-End_Source.git"  <==원격 레파지토리의 모든 내용을 가져온다. 
+
+-- 원격 레파지토리의 수정된 내용만 복사해옴.  (클론된 폴더에 위치) 
+-- 
+git pull origin main 
+
+-- 원격 레파지토리 변수를 다르게 적용 : 
+ -- myrepo : push  할 수 있다. <자신의 레파지토리> 
+git remote add myrepo "https://github.com/himedia20231114/new_FE.git"
+git add . 
+git commit -m "커밋 설명"
+git push myrepo main 
+
+
+https://studiomeal.com/archives/197 
+    IE 브라우져에서는 지원안됨  ----> Flex  
+    - IE  ==> 엣지 
+
+    -- float :   블락 ==> 인라인 
+	-- width 가 지정 되어야 하위 블락이 비어있는 공간으로 올라옴
+	-- margin , padding 을 사용해서 박스의 공간을 처리 
+	-- clear 를 반드시 사용 : 사용후
+	-- 형제 레벨에서 float 속성을 적용 
+ 
+    -- Flex : 블락의 width 를 지정 하지 않더라도 자동으로  처리됨 
+	-- margin, padding 을 사용하지 않고 자동으로 처리 
+	-- 부모 레벨에서 처리함. 
+
+
+
+
+
+공지 사항 : 
+    - 1월 15일 : ppt 스토리 보드 ( 소개, 사이트 주제 ,소개,  스케줄, 프로그램 사용, main, sub, 회원 로그인) 
+    - 1월 26일 :
+	    -  개인 포폴 업로드(FE, BE, PPT) - 50페이지 내외(PPT)  ,
+		MVC M2 
+	    -  팀프로잭트 스토리보드.ppt 제작 (소개, 사이트 주제 ,팀소개,  스케줄, 프로그램 사용, main, sub, 회원 로그인)
+		-- spring boot, JPA, DBMS (Oracle , mysql ) 
+    - 2월 27 : 팀 프로잭트 완료  
+	  
+    
+
+
+
+
+
+
+
+ 
+
