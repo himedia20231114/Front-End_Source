@@ -26,7 +26,8 @@ https://studiomeal.com/archives/197
  
     -- Flex : 블락의 width 를 지정 하지 않더라도 자동으로  처리됨 
 	-- margin, padding 을 사용하지 않고 자동으로 처리 
-	-- 부모 레벨에서 처리함. 
+	-- 부모 레벨에서 처리됨. 
+	-- 형제 레벨에서 처리됨
 
 -- 태그<div> , 엘리멘트(박스)   : <div> </div> 
 positon :  엘리멘트(박스)의 위치를 조정 : left, top, right , bottom  
@@ -42,11 +43,24 @@ positon :  엘리멘트(박스)의 위치를 조정 : left, top, right , bottom
 		- 조상 position 없음 & 자식 absolute 
 		      - view port를 기준 점으로 잡는다.  body ( left 0 , right 0) 
 			 
-    - fixed 	: 뷰 포트(pc, 테블릿, 모바일)  를 기준점으로 잡는다.  , body 의 왼쪽 최상단 ( left 0px, top 0px) 
+    - fixed 	: 뷰 포트(pc, 테블릿, 모바일)  를 기준점으로 잡는다.  , 
+	-- body 의 왼쪽 최상단 ( left 0px, top 0px) 
 	--  스크롤을 이동하더라도 항상 고정 위치에 있음. 
 	-- 자신의 블락이 없어짐. body 가 기준점 
 
 
+z-index : 박스의 레이어를 적용해서 박스의 우선 순위 결정 .  21억
+    - 값이 낮을 수록 아래에 적용됨 
+    - 값이 높을 수록 위에 적용됨 
+
+    - 10 , 20, 30, 
+    -  100, 200, 300 ........
+
+투명도 설정 : opacity 
+   - opacity : 1.0   <=== 완정 불투명 
+   - opacity : 0.5   <===  투명도 : 50% 
+   - opacity : 0.0   <=== 완전 투명  
+ 
 
 
 
