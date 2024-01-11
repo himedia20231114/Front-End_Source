@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style> 
+        table, tr, td {
+            border : 2px solid black ;
+            padding : 10px ; 
+            
+        }
+    
+    </style>
+
+
     <script>
         var d2data = [[10, 20, 30, 40, 0], [60, 70, 80, 90, 0]];
 
@@ -22,13 +33,29 @@
 
         function arr2 () {
             // 테이블에 td 블락에 값을 출력, 2중 for문을 사용해서 출력  
-            let tab ;   
+            let tab ;  
+            // 행을 루프 
+            tab = "<table align = 'center' style = 'border:2px solid red ; padding : 10px'> " ; 
+            for ( let i = 0 ; i < d2data.length ; i++) {
+                tab += "<tr>" ; 
 
+                for ( let j = 0 ; j < d2data[i].length ; j++) {
+                    tab += "<td style = 'border:2px solid red ; padding : 10px'>" + d2data[i][j] + "</td>";
+                }
+                tab += "</tr>";
+            } 
 
+            tab += "</table>";
+
+            document.write (tab);
         }
 
 
     </script>
+
+
+
+
 </head>
 <body>
 
