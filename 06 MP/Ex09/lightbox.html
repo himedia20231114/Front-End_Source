@@ -36,7 +36,7 @@
             left : 0px; 
 
             /* 처음 로딩시 보이지 않도록 설정 */ 
-            /* display : none ;  */
+            display : none ; 
         }
 
         #lightbox img {
@@ -56,12 +56,12 @@
     <!-- 작은 이미지 출력 부분 -->
     <div class = "row">
         <ul>
-            <li><img src="images/tree-1-thumb.jpg" class="pic"> </li>
-            <li><img src="images/tree-2-thumb.jpg" class="pic"> </li>
-            <li><img src="images/tree-3-thumb.jpg" class="pic"> </li>
-            <li><img src="images/tree-4-thumb.jpg" class="pic"> </li>
-            <li><img src="images/tree-5-thumb.jpg" class="pic"> </li>
-            <li><img src="images/tree-6-thumb.jpg" class="pic"> </li>
+            <li><img src="images/tree-1-thumb.jpg" data-src="images/tree-1.jpg" class="pic"> </li>
+            <li><img src="images/tree-2-thumb.jpg" data-src="images/tree-2.jpg" class="pic"> </li>
+            <li><img src="images/tree-3-thumb.jpg" data-src="images/tree-3.jpg"  class="pic"> </li>
+            <li><img src="images/tree-4-thumb.jpg" data-src="images/tree-4.jpg"  class="pic"> </li>
+            <li><img src="images/tree-5-thumb.jpg" data-src="images/tree-5.jpg"  class="pic"> </li>
+            <li><img src="images/tree-6-thumb.jpg" data-src="images/tree-6.jpg"  class="pic"> </li>
         </ul>
     </div>
 
@@ -69,6 +69,41 @@
     <div id = "lightbox"> 
         <img src = "images/tree-1.jpg" id = "lightboxImage">
     </div>
+
+
+    <script> 
+        // 객체 선언 , pics[0] , pics[1], pics[2], pics[3], pics[4], pics[5]
+        let pics = document.getElementsByClassName('pic'); 
+        let lightbox = document.getElementById('lightbox'); 
+        let lightboxImage = document.getElementById ('lightboxImage'); 
+
+
+        // 작은 이미지에 리스너를 장착 해서 showLisghtbox() 함수 호출 
+        for (let i =0 ; i < pics.length; i++) {
+
+            pics[i].addEventListener("click" , showLightbox); 
+        }
+
+        //함수 : 작은 이미지를 클릭시 큰이미지를 출력 하는 함수 
+        function showLightbox() {
+
+            //bitLocation 은 원본 이미지 이름을 저장 
+            let bigLocation = this.getAttribute("data-src"); 
+
+            lightboxImage.setAttribute("src", bigLocation); 
+
+            /* lightbox 의 화면을 출력 */ 
+            lightbox.style.display= "block" ; 
+        }
+
+        // 큰이미를 화면에 출력후 클릭시 보이지 않도록 하는 함수 
+        lightbox.onclick = function () {
+            lightbox.style.display = "none"; 
+        }
+    
+    
+    
+    </script>
 
     
 </body>
