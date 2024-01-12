@@ -35,12 +35,12 @@
             // 테이블에 td 블락에 값을 출력, 2중 for문을 사용해서 출력  
             let tab ;  
             // 행을 루프 
-            tab = "<table align = 'center' style = 'border:2px solid red ; padding : 10px'> " ; 
+            tab = "<table align = 'center' style = 'border:2px solid red ; padding : 10px;'> " ; 
             for ( let i = 0 ; i < d2data.length ; i++) {
                 tab += "<tr>" ; 
 
                 for ( let j = 0 ; j < d2data[i].length ; j++) {
-                    tab += "<td style = 'border:2px solid red ; padding : 10px'>" + d2data[i][j] + "</td>";
+                    tab += "<td style = 'border:2px solid red ; padding : 10px;'>" + d2data[i][j] + "</td>";
                 }
                 tab += "</tr>";
             } 
@@ -53,15 +53,10 @@
 
     </script>
 
-
-
-
 </head>
 <body>
 
     <button onclick = "arr2()"> 클릭 </button>
-
-
 
 </body>
 
