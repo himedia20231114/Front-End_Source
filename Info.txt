@@ -176,6 +176,21 @@ BackEnd : 비즈니스 로직 처리 , DataBase (Oracle, MySQL, MariaDB, .....) 
 	https://aws.amazon.com/ko/free/	<== AWS 계정 생성, 신용카드
 	https://sujinisacat.tistory.com/12	<== 블로그 
 
+https://lrl.kr/wmAs	  <== 업로드[ ppt ]   
+https://aws.amazon.com/
+
+cloud  서비스 : 인터넷에서 서버를 구매 , 
+   - AWS : Amazone 	1위
+   - Azure : Microsoft 	2위
+   - GCP : Google 		3위 
+
+https://code.jquery.com/jquery-3.7.1.min.js
+
+https://getbootstrap.kr/	<== 부트 스트랩 
+https://www.startbootstrap.com/	<== 부트스트랩 무료 템플릿 사이트 
+
+
+https://aws.amazon.com/
 
 
 
