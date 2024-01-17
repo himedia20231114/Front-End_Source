@@ -368,7 +368,7 @@ RemoteDynamicKeywordAddresses : {}
 
 
 =======================================================
-AWS : WS2012_VM 
+AWS : WS2022_VM 
 	  인스턴스 유형 : t2 micro 
 	  VM 의 사설 IP : 172.31.0.200
 	  public IP : 활성화 
