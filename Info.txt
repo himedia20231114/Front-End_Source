@@ -535,7 +535,7 @@ Ubuntu Linux 는 설치가 되어 있지 않다.
 	sudo systemctl start ssh
 
 ======================================================================
-Hyper-V 에서 VM의 네트워크 고정 시키기 
+Hyper-V 에서 VM의 네트워크 고정 시키기  <== Host 에서 PowerShell 관리자 모드에서 실행 
 
 New-VMSwitch -SwitchName "NAT-Switch" -SwitchType Internal
 New-NetIPAddress -IPAddress 10.10.10.1 -PrefixLength 24 -InterfaceAlias "vEthernet (NAT-Switch)"
@@ -543,6 +543,11 @@ New-NetNat -Name NAT-Swtich -InternalIPInterfaceAddressPrefix 10.10.10.0/24
 
 - 모든 VM의 랜카드 : NAT-Switch 로 설정 
 
-
+고정 IP 셋팅 
+WS2022 (10), WS2019 (20), Ubuntu (30), Rocky (40)	<== nmtui 
+   IP : 10.10.10.x
+   s/m : 255.255.255.0
+   g/w : 10.10.10.1
+   dns : 8.8.8.8
 
 
