@@ -527,7 +527,12 @@ RedHat Linux , CentOS ===> Rocky Linux
    - systemctl status sshd			<== sshd 작동중인지 확인 , 설치되어 있음.
 
 Ubuntu Linux 는 설치가 되어 있지 않다. 
-	- 
+	
+	sudo apt update
+	sudo apt install openssh-server
+	sudo systemctl status ssh
+	sudo systemctl enable ssh
+	sudo systemctl start ssh
 
 ======================================================================
 Hyper-V 에서 VM의 네트워크 고정 시키기 
