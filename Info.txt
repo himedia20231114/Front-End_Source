@@ -457,7 +457,86 @@ WS2022 VM - 설정
 		Pa55w.rd 
   
 
+1. 한글 언어팩 설치 
+2. OpenSSH Server 설치 , 방화벽 오픈 : wf.msc ==>     TCP 22 
+2-1. 고정 IP Setting : ipconfig /all  ,  ncpa.cpl 
 
+	IP 				: 172.31.249.100
+	Subnet Mask 	: 255.255.240.0
+	Default Gateway : 172.31.240.1
+	DNS Server 	`	: 172.31.240.1
+
+3. JDK 설치 , 톰캣 설치(80) (서비스 시작, 부팅시에도 자동으로 시작 )
+4. Oracle XE 21C 설치 
+4-1. 방화벽 오픈 
+	http : TCP 80 
+	Oracle : TCP 1521 
+
+5. 원격의 오라클의 테이블 생성 
+6. 개발된 local war 파일을 서버로 전송
+
+============================================================================
+3Tier 환경 : 확장성 고려한 서버 구성 
+	Web (Nginx, IIS)    WAS (Tomcat, webspare... ) 	  DB (Oracle)
+
+
+WS2022 :  Web (Tomcat) , TCP 80    <=== *.war 
+WS2019 : DB (Oracle), TCP 1521 
+
+Host OS : Oracle 21C  
+	IP : 192.168.0.60
+	방화벽 : TCP 1521 
+
+================================================================
+
+Host OS 와 VM 과 통신 하는 네트워크 : Default Switch
+  - Hyper-V 설치 : Host OS 에서 Default Switch 가상 네트워크가 생성 
+  - ncpa.cpl 
+  - Default Switch : Gateway, NAT, DHCP, DNS 
+		IP 	: 172.31.100.1
+		S/M : 255.255.255.0 
+
+WS2022 
+	IP : 172.31.100.10
+	s/m : 255.255.255.0
+	g/w : 172.31.100.1
+	dns : 172.31.100.1
+
+WS2019 
+	IP : 172.31.100.20
+	s/m : 255.255.255.0
+	g/w : 172.31.100.1
+	dns : 172.31.100.1	
+
+Ubuntu 
+	IP : 172.31.100.30
+	s/m : 255.255.255.0
+	g/w : 172.31.100.1
+	dns : 172.31.100.1
+
+Rocky ( RedHat, CentOS ) 
+	IP : 172.31.100.30
+	s/m : 255.255.255.0
+	g/w : 172.31.100.1
+	dns : 172.31.100.1
+
+=================================================
+RedHat Linux , CentOS ===> Rocky Linux 
+   - 설치시 네트워카드 활성화 
+
+   - systemctl status sshd			<== sshd 작동중인지 확인 , 설치되어 있음.
+
+Ubuntu Linux 는 설치가 되어 있지 않다. 
+	- 
+
+======================================================================
+Hyper-V 에서 VM의 네트워크 고정 시키기 
+
+New-VMSwitch -SwitchName "NAT-Switch" -SwitchType Internal
+New-NetIPAddress -IPAddress 10.10.10.1 -PrefixLength 24 -InterfaceAlias "vEthernet (NAT-Switch)"
+New-NetNat -Name NAT-Swtich -InternalIPInterfaceAddressPrefix 10.10.10.0/24
+
+- 모든 VM의 랜카드 : NAT-Switch 로 설정 
 
 
 
